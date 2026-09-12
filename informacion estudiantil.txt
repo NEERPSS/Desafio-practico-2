@@ -1,0 +1,15 @@
+ESAFÍO PRÁCTICO – PROGRAMACIÓN WEB I
+
+Estudiante: Santalla Rivera Gerzon Fernando
+
+Repositorio GitHub:
+https://github.com/NEERPSS/Desafio-practico-2.git
+
+Sitio web publicado (GitHub Pages):
+https://neerpss.github.io/Desafio-practico-2/
+
+Se adjunta la carpeta del proyecto con:
+- index.html
+- styles.css
+- imágenes
+- guía explicativa PDF
