@@ -1,0 +1,184 @@
+/* =========================================================
+   Todo el diseño es fluido (se adapta al ancho de pantalla)
+   ========================================================= */
+
+/* Esto hace que el padding y el borde no sumen al ancho total
+   de un elemento. Es lo único que se aplica a "todo". */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif; /* tipografía sans-serif legible */
+  color: #222222;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+/* .contenedor centra el contenido y le pone un ancho fluido:
+   90% del ancho de la pantalla, pero nunca más de 900px. */
+.contenedor {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto; /* esto lo centra horizontalmente */
+}
+
+/* Título y subtítulo del encabezado */
+header {
+  background-color: #17324d;
+  color: #ffffff;
+  padding: 30px 0;
+}
+header h1 {
+  margin: 0 0 8px 0;
+  font-size: 2rem;
+}
+.subtitulo {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #cfe0ee;
+}
+
+/* Menú de navegación */
+nav {
+  background-color: #0f2438;
+}
+nav ul {
+  margin: 0;
+  padding: 12px 0;
+  list-style: none; /* saca las viñetas de la lista */
+}
+/* display: inline-block hace que cada <li> se ponga uno al
+   lado del otro (como en una línea de texto) y, si no entran
+   todos, pasa solo el que sobra a la siguiente línea. */
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Secciones generales */
+section {
+  padding: 40px 0;
+}
+.seccion-gris {
+  background-color: #f4f6f8;
+}
+h2 {
+  color: #17324d;
+  font-size: 1.6rem;
+  margin-top: 0;
+}
+h3 {
+  color: #17324d;
+  font-size: 1.2rem;
+}
+
+/* Cada tema/artículo de la sección "Ejes temáticos" */
+.tema {
+  margin-bottom: 25px;
+}
+.tema:last-child {
+  margin-bottom: 0;
+}
+
+/* Citas del podcast */
+blockquote {
+  margin: 0 0 20px 0;
+  padding: 12px 20px;
+  border-left: 4px solid #17324d;
+  background-color: #f4f6f8;
+  font-style: italic;
+}
+blockquote:last-child {
+  margin-bottom: 0;
+}
+
+/* Todas las imágenes se adaptan al ancho de su contenedor
+   sin nunca desbordarlo. Esto es clave para la fluidez. */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #dddddd;
+    width: 100%;
+  height: 250px;       
+  object-fit: cover;
+}
+
+img:hover {
+  transform: scale(1.05); /* Hace un pequeño zoom */
+  cursor: pointer;
+}
+
+/* VIDEO FLUIDO
+   El iframe de YouTube necesita una altura fija en píxeles,
+   así que usamos un "truco" clásico: el div de afuera
+   (video-wrapper) reserva un espacio con la misma proporción
+   que un video 16:9 usando padding-top en porcentaje
+   (9 dividido 16 = 0.5625 = 56.25%). El iframe de adentro se
+   pone en position: absolute para ocupar todo ese espacio. */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background-color: #000000;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+figcaption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+/* GALERÍA DE IMÁGENES
+   Cada figura mide 45% del ancho del contenedor, con un poco
+   de margen. Como 45% + 45% + margenes es casi 100%, entran
+   2 imágenes por fila. Si la pantalla es angosta, la segunda
+   imagen ya no entra al lado de la primera y pasa sola a la
+   fila de abajo, formando 1 sola columna. Todo esto sin
+   escribir ninguna regla @media. */
+.galeria-item {
+  display: inline-block;
+  width: 45%;
+  margin: 0 2% 20px 0;
+  vertical-align: top;
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 250px;       
+  object-fit: cover;   /* Evita que se deformen o estiren */
+}
+
+/* Pie de página */
+footer {
+  background-color: #17324d;
+  color: #cfe0ee;
+  padding: 25px 0;
+  font-size: 0.9rem;
+}
+footer p {
+  margin: 0 0 6px 0;
+}
+footer code {
+  background-color: #0f2438;
+  padding: 2px 6px;
+  color: #ffffff;
+}
