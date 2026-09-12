@@ -1,9 +1,4 @@
-/* =========================================================
-   Todo el diseño es fluido (se adapta al ancho de pantalla)
-   ========================================================= */
 
-/* Esto hace que el padding y el borde no sumen al ancho total
-   de un elemento. Es lo único que se aplica a "todo". */
 * {
   box-sizing: border-box;
 }
@@ -16,8 +11,6 @@ body {
   line-height: 1.6;
 }
 
-/* .contenedor centra el contenido y le pone un ancho fluido:
-   90% del ancho de la pantalla, pero nunca más de 900px. */
 .contenedor {
   width: 90%;
   max-width: 900px;
@@ -49,9 +42,7 @@ nav ul {
   padding: 12px 0;
   list-style: none; /* saca las viñetas de la lista */
 }
-/* display: inline-block hace que cada <li> se ponga uno al
-   lado del otro (como en una línea de texto) y, si no entran
-   todos, pasa solo el que sobra a la siguiente línea. */
+
 nav li {
   display: inline-block;
   margin-right: 20px;
@@ -102,16 +93,11 @@ blockquote:last-child {
   margin-bottom: 0;
 }
 
-/* Todas las imágenes se adaptan al ancho de su contenedor
-   sin nunca desbordarlo. Esto es clave para la fluidez. */
 img {
   max-width: 100%;
   height: auto;
   display: block;
   border: 1px solid #dddddd;
-    width: 100%;
-  height: 250px;       
-  object-fit: cover;
 }
 
 img:hover {
@@ -119,13 +105,6 @@ img:hover {
   cursor: pointer;
 }
 
-/* VIDEO FLUIDO
-   El iframe de YouTube necesita una altura fija en píxeles,
-   así que usamos un "truco" clásico: el div de afuera
-   (video-wrapper) reserva un espacio con la misma proporción
-   que un video 16:9 usando padding-top en porcentaje
-   (9 dividido 16 = 0.5625 = 56.25%). El iframe de adentro se
-   pone en position: absolute para ocupar todo ese espacio. */
 .video-wrapper {
   position: relative;
   width: 100%;
@@ -147,19 +126,14 @@ figcaption {
   color: #555555;
 }
 
-/* GALERÍA DE IMÁGENES
-   Cada figura mide 45% del ancho del contenedor, con un poco
-   de margen. Como 45% + 45% + margenes es casi 100%, entran
-   2 imágenes por fila. Si la pantalla es angosta, la segunda
-   imagen ya no entra al lado de la primera y pasa sola a la
-   fila de abajo, formando 1 sola columna. Todo esto sin
-   escribir ninguna regla @media. */
 .galeria-item {
   display: inline-block;
   width: 45%;
   margin: 0 2% 20px 0;
   vertical-align: top;
 }
+
+
 
 .galeria-item img {
   width: 100%;
